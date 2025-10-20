@@ -4,8 +4,12 @@ import time
 
 GPIO.setmode(GPIO.BOARD)
 
-GPIO.setup(12,GPIO.OUT, initial=GPIO.HIGH)
+GPIO.setup(33,GPIO.OUT, initial=GPIO.LOW)
 
-time.sleep(60)
+for i in range (100):
+  GPIO.output(33,GPIO.HIGH)
+  time.sleep(100)
+  GPIO.output(33,GPIO.LOW)
+  time.sleep(900)
 
 GPIO.cleanup()
