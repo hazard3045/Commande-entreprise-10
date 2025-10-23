@@ -4,7 +4,7 @@
 int main(){
     if(gpioInitialise() < 0){}
     else{
-        const int pin = 33;
+        const int pin = 13;
         gpioSetMode(pin , PI_INPUT);
         int level = 0;
         int new_level;
