@@ -9,8 +9,25 @@ bool impulsion; // True si il y a eu une impulsion False sinon
  
 // Fonction 
 
-void prendre_photo(){
-    // une fonction qui prend la photo et return la photo
+string prendre_photo(){
+    // Génère un nom de fichier avec le format : photo_nbImpulsions_clk_externe_clk_interne
+    string nomFichier = "photo_" + to_string(nbImpulsions) + "_" + 
+                        to_string(clk_externe) + "_" + 
+                        to_string(clk_interne) + ".jpg";
+    
+    // Construit la commande libcamera-jpeg
+    string commande = "libcamera-jpeg -o " + nomFichier + " --nopreview -t 1";
+    
+    // Exécute la commande
+    int resultat = system(commande.c_str());
+    
+    if (resultat == 0) {
+        cout << "Photo prise : " << nomFichier << endl;
+        return nomFichier;
+    } else {
+        cerr << "Erreur lors de la prise de photo" << endl;
+        return "";
+    }
 }
 
 int*int*int tag_photo(){
