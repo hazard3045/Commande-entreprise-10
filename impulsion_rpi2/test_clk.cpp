@@ -26,4 +26,5 @@ int main() {
 
     gpioSetISRFunc(13, RISING_EDGE, 0, interrupt_clk_rising);
     gpioSetISRFunc(13, FALLING_EDGE, 0, interrupt_clk_falling);
+    while(1){}
 }
