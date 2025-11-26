@@ -30,6 +30,7 @@ int main() {
     // Boucle principale : ne pas bloquer le thread ISR
     while (true) {
         std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        std::cout << gpioRead(13) << std::endl;
     }
 
     gpioTerminate(); // jamais atteint ici
