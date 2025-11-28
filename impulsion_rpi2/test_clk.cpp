@@ -2,8 +2,8 @@
 #include <iostream>
 #include <thread>
 
-bool bascule = true;
-uint32_t global_tick = 12;
+bool bascule ;
+uint32_t global_tick ;
 
 void rising_callback(int gpio, int level, uint32_t tick) {
     bascule = true;
@@ -15,7 +15,8 @@ void rising_callback(int gpio, int level, uint32_t tick) {
 int main() {
     int pi = 17;
 
-    bascule = false;
+    bascule = true;
+    global_tick = 15;
     
     // Initialisation pigpio
     if (gpioInitialise() < 0) {
