@@ -1,10 +1,9 @@
 #include <pigpio.h>
 #include <iostream>
-#include <chrono>
 #include <thread>
 
-bool bascule;
-uint32_t global_tick;
+bool bascule = true;
+uint32_t global_tick = 12;
 
 void rising_callback(int gpio, int level, uint32_t tick) {
     bascule = true;
