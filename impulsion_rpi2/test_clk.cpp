@@ -38,8 +38,8 @@ int main() {
             bascule = false;
             std::cout << "rise happened at" << global_tick << std::endl;
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(200));
-        std::cout << gpioRead(pi) << std::endl;
+       // std::this_thread::sleep_for(std::chrono::milliseconds(200));
+       // std::cout << gpioRead(pi) << std::endl;
     }
 
     gpioTerminate(); // jamais atteint ici
