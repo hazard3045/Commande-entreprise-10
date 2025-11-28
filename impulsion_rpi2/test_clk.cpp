@@ -11,7 +11,7 @@ void rising_callback(int gpio, int level, uint32_t tick) {
     global_tick = tick;
 }
 
-void falling_callback(int gpio, int level, uint32_t tick) {}
+//void falling_callback(int gpio, int level, uint32_t tick) {}
 
 int main() {
     int pi = 17;
@@ -30,8 +30,8 @@ int main() {
     gpioSetPullUpDown(pi, PI_PUD_DOWN); 
 
     // Installer les callbacks ISR
-    gpioSetISRFunc(pi, RISING_EDGE, 0, rising_callback);
-    gpioSetISRFunc(pi, FALLING_EDGE, 0, falling_callback);
+    gpioSetISRFunc(pi, EITHER_EDGE, 0, rising_callback);
+    //gpioSetISRFunc(pi, FALLING_EDGE, 0, falling_callback);
 
     // Boucle principale : ne pas bloquer le thread ISR
     while (true) {
