@@ -21,16 +21,25 @@ string prendre_photo(){
     
     // Construit la commande libcamera-raw
     // libcamera-raw est utilisé pour la capture des données brutes du capteur
+<<<<<<< HEAD
     string commande = "libcamera-still --raw -o /mnt/usb/"+nomFichier+".dng"
     " --width 4608 --height 2592 -t 1 --nopreview "
     "--exposure sport --shutter 20000 --gain 1.0 --autofocus-mode manual --lens-position 0.0 --awb auto 2>/dev/null";
     //--nopreview --exposure sport --immediate  --awb auto
+=======
+    string commande = "libcamera-still --raw --metadata "+nomFichier+".json -o "+ nomFichier +".dng --width 4608 --height 2592 -t 300";
+   // MODIFICATION 2 : Commande libcamera-raw
+>>>>>>> 69413b2b7272375babab6c5fd0849a004f315f0c
     
     // Exécute la commande
     int resultat = system(commande.c_str());
     
     if (resultat == 0) {
+<<<<<<< HEAD
         cout << "Photo prise : " << nomFichier << ".dng" << endl;
+=======
+        cout << "Photo prise : " << nomFichier << endl;
+>>>>>>> 69413b2b7272375babab6c5fd0849a004f315f0c
         return nomFichier;
     } else {
         cerr << "Erreur lors de la prise de photo" << endl;
@@ -46,6 +55,7 @@ int main(){
     
     // Définition des variables
     nbImpulsions = 1;
+<<<<<<< HEAD
     clk_externe = 1;
     clk_interne = 5;
     // La variable total_duration doit être de type chrono::milliseconds
@@ -57,24 +67,40 @@ int main(){
         // clk_externe += 1; // J'ai commenté car clk_externe n'est pas défini ici
         // Assumons que prendre_photo() est une fonction C++ qui retourne une string
         string resultat = prendre_photo(); 
+=======
+    clk_externe = 1000;
+    clk_interne = 50000;
+    for (int i = 0; i < 5; ++i) {
+        auto start_test = chrono::high_resolution_clock::now();
+
+        string resultat = prendre_photo();
+>>>>>>> 69413b2b7272375babab6c5fd0849a004f315f0c
         auto end_test = chrono::high_resolution_clock::now();
 
         if (!resultat.empty()) {
             auto duration_test = chrono::duration_cast<chrono::milliseconds>(end_test - start_test);
+<<<<<<< HEAD
             
             // CORRECTION: Mettre à jour la variable globale sans 'auto' ni cast superflu
             total_duration += duration_test;
             
             cout << "Temps total (Capture + Stockage) : " << duration_test.count() << " ms" << endl;
+=======
+            cout << "Temps total (Capture + Stockage) : " << duration_test.count() << " ms" << endl;
+            cout << "Nom de fichier attendu : photo_1_1000_50000.raw" << endl; // MODIFICATION 3 : Vérification .raw
+>>>>>>> 69413b2b7272375babab6c5fd0849a004f315f0c
             cout << "Test 1 RÉUSSI : Vérifiez la présence du fichier." << endl;
         } else {
             cout << "Test 1 ÉCHOUÉ : La fonction a renvoyé une chaîne vide." << endl;
         }
     }
+<<<<<<< HEAD
     
     // Correction de la ligne suivante pour utiliser la variable de type chrono::milliseconds
     cout << "Temps total pour les 5 prises de vue :" << total_duration.count() << "ms" <<endl;
     cout << "Temps moyen:" << total_duration.count()/5 << "ms" <<endl;
+=======
+>>>>>>> 69413b2b7272375babab6c5fd0849a004f315f0c
     // // Testez un deuxième scénario
     // cout << "\n--- TEST 2 : Capture avec incrémentation ---" << endl;
     // nbImpulsions = 2; // Correction, nbImpulsions était oublié dans la version précédente.
