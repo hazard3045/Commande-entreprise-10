@@ -15,15 +15,17 @@ int gpio_clk = 27; // GPIO pour la clock externe
 
 string prendre_photo(){
     // Génère un nom de fichier avec le format : photo_nbImpulsions_clk_externe_clk_interne
-    string nomFichier = "photo_" + to_string(nbImpulsions) + "_" + 
+    string nomFichier = "/home/rpi0/photo_" + to_string(nbImpulsions) + "_" + 
                         to_string(clk_externe) + "_" + 
-                        to_string(clk_interne) + ".dng";
+                        to_string(gpioTick()) + ".dng";
     
     // Construit la commande libcamera-jpeg
-    string commande = "libcamera-raw -o " + nomFichier + " --nopreview -t 1";
+    string commande = "libcamera-raw -o " + nomFichier + " --nopreview -t 300";
+    //Le dernier paramètre doit être au minimum à 300 pour laisser le temps de stocker la photo
     
     // Exécute la commande
     int resultat = system(commande.c_str());
+    system("sync");
     
     if (resultat == 0) {
         cout << "Photo prise : " << nomFichier << endl;
@@ -34,9 +36,6 @@ string prendre_photo(){
     }
 }
 
-int*int*int tag_photo(){
-    return (nbImpulsions, clk_externe, gpioTick());
-}
 
 void rising_callback_clk(int gpio, int level, uint32_t tick) {
     if (level == 1){
@@ -50,16 +49,6 @@ void rising_callback_impul(int gpio, int level, uint32_t tick) {
         nbImpulsions += 1;
     }
 }
-
-bool stock_photo(){
-//prend une photo  en paramétre et la stock sur la carte SD renvoie True quand c'est terminé 
-return True 
-}
-
-void compresser_photo(){
-    // prend une photo en paramétre la compresse et return la photo
-}
-
 
 //main 
 int main(){
@@ -77,15 +66,16 @@ int main(){
     gpioSetPullUpDown(gpio_clk, PI_PUD_DOWN);
 
     // ALERT func = en mode pollé ultra-rapide, déclenché à chaque changement
-    gpioSetAlertFunc(gpio_imp, rising_callback_impulsion);
+    gpioSetAlertFunc(gpio_imp, rising_callback_impul);
     gpioSetAlertFunc(gpio_clk, rising_callback_clk);
 
+    
 
     while (true){
         if (impulsion == true){
+            std::cout << "impulsion reçue\n";
             impulsion = false;
             string photo = prendre_photo();
-            stock_photo(photo);
         }
         usleep(1000); // Attendre 1 ms pour éviter une boucle trop rapide
     }
