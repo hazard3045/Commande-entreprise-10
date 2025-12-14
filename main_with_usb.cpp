@@ -15,7 +15,7 @@ int gpio_clk = 27; // GPIO pour la clock externe
 
 string prendre_photo(){
     // Génère un nom de fichier avec le format : photo_nbImpulsions_clk_externe_clk_interne
-    string nomFichier = "/mnt/usb/photo_" + to_string(nbImpulsions) + "_" + 
+    string nomFichier = "/mnt/usb/images/photo_" + to_string(nbImpulsions) + "_" + 
                         to_string(clk_externe) + "_" + 
                         to_string(gpioTick()) + ".dng";
     
