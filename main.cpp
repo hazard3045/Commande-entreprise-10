@@ -1,5 +1,5 @@
 #include <iostream>
-#include <pigpio.h> 
+#include <pigpio.h>
 #include <unistd.h>
 #include <iomanip> 
 
@@ -19,10 +19,11 @@ string prendre_photo(){
                         to_string(clk_externe) + "_" + 
                         to_string(gpioTick()) + ".dng";
     
-    // Construit la commande libcamera-jpeg
-    string commande = "libcamera-raw -o " + nomFichier + " --nopreview -t 300";
-    //Le dernier paramètre doit être au minimum à 300 pour laisser le temps de stocker la photo
-    
+    // Construit la commande libcamera-still
+    string commande = "libcamera-still -- raw -o " + nomFichier + " --width 4608 --height 2592 --nopreview -t 1"
+    "--exposure sport --shutter 20000 --gain 1.0 --autofocus-mode manual --lens-position 0.0 --awb auto 2>/dev/null";
+    // La deuxième ligne améliore la vitesse de capture
+
     // Exécute la commande
     int resultat = system(commande.c_str());
     system("sync");
@@ -58,7 +59,7 @@ int main(){
         return 1;
     }
 
-    std::cout << "Programme démarré, test ISR sur GPIO 17\n";
+    std::cout << "Programme démarré, test ISR sur GPIO 17 et 27\n";
 
     gpioSetMode(gpio_imp, PI_INPUT);
     gpioSetMode(gpio_clk, PI_INPUT);
