@@ -20,8 +20,8 @@ string prendre_photo(){
                         to_string(gpioTick()) + ".dng";
     
     // Construit la commande libcamera-still
-    string commande = "libcamera-still -- raw -o " + nomFichier + " --width 4608 --height 2592 --nopreview -t 1"
-    "--exposure sport --shutter 20000 --gain 1.0 --autofocus-mode manual --lens-position 0.0 --awb auto 2>/dev/null";
+    string commande = "libcamera-still --raw -o " + nomFichier + " --width 4608 --height 2592 --nopreview -t 1"
+    " --exposure sport --shutter 20000 --gain 1.0 --autofocus-mode manual --lens-position 0.0 --awb auto 2>/dev/null";
     // La deuxième ligne améliore la vitesse de capture
 
     // Exécute la commande
