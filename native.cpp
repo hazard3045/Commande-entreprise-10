@@ -1,3 +1,5 @@
+// à compiler avec:  g++ -o nat native.cpp $(pkg-config --cflags --libs libcamera) -lpigpio -std=c++17
+
 #include <iomanip>
 #include <iostream>
 #include <memory>
