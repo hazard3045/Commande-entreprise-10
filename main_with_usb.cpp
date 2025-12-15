@@ -20,7 +20,7 @@ string prendre_photo(){
                         to_string(gpioTick()) + ".dng";
     
     // Construit la commande libcamera-still
-    string commande = "libcamera-still --raw -o " + nomFichier + " --width 4608 --height 2592 --nopreview -t 1"
+    string commande = "libcamera-still --raw -o " + nomFichier + " --width 4608 --height 2592 --nopreview -t 1" // Si problème lors de la capture "erreur lors de la prise de photo", remplacez libcamera-still par rpicam-still
     " --exposure sport --shutter 20000 --gain 1.0 --autofocus-mode manual --lens-position 0.0 --awb auto 2>/dev/null";
 
     // Exécute la commande
