@@ -360,6 +360,19 @@ python3 convert.py photo.raw
 python3 convert.py --batch
 ```
 
+
+## Possible problème d'actualisation
+
+Au cours de vos manipulations, il est possible que vous mettiez à jour la bibliothèque libcamera. Hors, dans les versions les plus récentes de cette bibliothèque, le nom des commandes basiques peut passer de "libcamera" à "rpicam".
+
+> 🚨 **ATTENTION : Mise à Jour Critique des Commandes** 🚨
+>
+> Si votre programme vous renvoie une erreur pendant la prise de photos, et que seule la dernière solution (bibliothèque native) réussit, **il est nécessaire de remplacer toutes les occurrences de la commande \`libcamera-commande\` par \`rpicam-commande\` !**
+>
+> **Ces changements sont signalés aux endroits du code concernés.**
+
+
 ---
 
 **Document réalisé dans le cadre du projet Commande Entreprise - IMT Atlantique**
+
