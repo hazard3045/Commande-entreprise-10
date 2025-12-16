@@ -328,7 +328,13 @@ sudo ./exe
 
 #### Récupération des données:
 
-Il suffit de retirer la clé USB.
+Premièrement éjecter la clé:
+
+```bash
+sudo umount /dev/sda1
+```
+
+Il suffit maintenant de la retirer.
 
 ### Cas Optimisé: Fréquence 1.7Hz
 
@@ -375,4 +381,5 @@ Au cours de vos manipulations, il est possible que vous mettiez à jour la bibli
 ---
 
 **Document réalisé dans le cadre du projet Commande Entreprise - IMT Atlantique**
+
 
