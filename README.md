@@ -1,13 +1,14 @@
 # Notice d'utilisation: Dispositif de prise de vue pour drone
 
-[![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](https://www.linux.org/)*
-[![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?logo=raspberrypi&logoColor=white)](https://www.raspberrypi.org/)*
+[![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](https://www.linux.org/)
+[![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?logo=raspberrypi&logoColor=white)](https://www.raspberrypi.org/)
 [![C++](https://img.shields.io/badge/C++-00599C?logo=cplusplus&logoColor=white)](https://isocpp.org/)
 [![libcamera](https://img.shields.io/badge/libcamera-open_source-004a88)](https://libcamera.org/)
 
 **Auteurs:** 
+<br>
 Achile PINSARD et Astrid MARION [responsables choix de caméra et optimisation du temps de stockage]<br>
-Lianne SOO et Nihal LACHGUER [responsables prise de vue] <br>
+Lianne SOO et Nihal LACHGUER [responsables prise de vue]<br>
 Thomas BRUYERE et Tinihen MENICHE [responsables envoie/reception des impulsions]<br>
 [Tous ont contribué à la réalisation de la documentation]
 
@@ -390,6 +391,7 @@ Au cours de vos manipulations, il est possible que vous mettiez à jour la bibli
 ---
 
 **Document réalisé dans le cadre du projet Commande Entreprise - IMT Atlantique**
+
 
 
 
