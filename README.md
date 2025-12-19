@@ -9,7 +9,7 @@
 <br>
 Achile PINSARD et Astrid MARION [responsables choix de caméra et optimisation du temps de stockage]<br>
 Lianne SOO et Nihal LACHGUER [responsables prise de vue]<br>
-Thomas BRUYERE et Tinihen MENICHE [responsables envoie/reception des impulsions]<br>
+Thomas BRUYERE et Tinihen MENICHE [responsables envoi/reception des impulsions]<br>
 [Tous ont contribué à la réalisation de la documentation]
 
 **Groupe:** 10
@@ -391,6 +391,7 @@ Au cours de vos manipulations, il est possible que vous mettiez à jour la bibli
 ---
 
 **Document réalisé dans le cadre du projet Commande Entreprise - IMT Atlantique**
+
 
 
 
