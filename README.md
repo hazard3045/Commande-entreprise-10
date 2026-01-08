@@ -23,8 +23,7 @@ Thomas BRUYERE et Tinihen MENICHE [responsables envoi/reception des impulsions]<
 Ce document vise à donner une marche à suivre quant à l'utilisation du dispositif de prise de vue fourni au Cerema dans le cadre du projet Commande entreprise de l'IMT Atlantique. Vous y trouverez le mode d'emploi pour l'utilisation et la manipulation du dispositif.
 
 
-<img src="Figures/youtube.png" width="100" align="left"> [Tutoriel YouTube d'utilisation du module](https://youtu.be/Lx89B-wlutc)
-
+## <img src="Figures/youtube.png" width="100" align="left"> [Tutoriel YouTube d'utilisation du module](https://youtu.be/Lx89B-wlutc)<br>
 
 ---
 
@@ -395,6 +394,7 @@ Au cours de vos manipulations, il est possible que vous mettiez à jour la bibli
 ---
 
 **Document réalisé dans le cadre du projet Commande Entreprise - IMT Atlantique**
+
 
 
 
