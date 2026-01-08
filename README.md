@@ -24,6 +24,8 @@ Ce document vise à donner une marche à suivre quant à l'utilisation du dispos
 
 
 <img src="Figures/youtube.png" width="100" align="left"> [Tutoriel YouTube d'utilisation du module](https://youtu.be/Lx89B-wlutc)
+
+
 ---
 
 ## Table des matières
@@ -393,6 +395,7 @@ Au cours de vos manipulations, il est possible que vous mettiez à jour la bibli
 ---
 
 **Document réalisé dans le cadre du projet Commande Entreprise - IMT Atlantique**
+
 
 
 
